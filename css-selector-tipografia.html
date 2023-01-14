@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector y Tipografia</title>
+
+    <!-- Cargar fuente mediante el head de la pagina -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet"> -->
+
+    <!-- Cargar fuente mediante el head de la pagina (cargando 2 familia de fuentes) -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Roboto:wght@100;400&display=swap" rel="stylesheet"> -->
+
+    <style>
+        /** 
+         *Selectors 
+        */
+
+        /* Cargar fuente mediante hoja de estilo */
+        /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap'); */
+
+        /* Cargar fuente mediante hoja de estilo (cargando 2 familia de fuentes) */
+        @import url('https://fonts.googleapis.com/css2?family=Maven+Pro&family=Roboto:wght@100;400&display=swap');
+
+        /* all elements */
+        * {
+            color: blue;            
+            font-family: 'Roboto', sans-serif;            
+        }
+
+        /* all div tags */
+        div {
+            font-size: 2rem;
+            color: red;
+            font-family: 'Maven Pro', sans-serif;
+        }
+
+        /* all divs and paragraphs */
+        div, p {
+            background-color: aquamarine;
+        }
+
+        /* paragraphs inside divs */
+        div p {
+            background-color: yellow;
+        }
+
+        /* all p tags, one level deep in div */
+        div > p {
+            border: 3px solid green;
+        }
+
+        /* p tags immediately after div */
+        div + p {
+            border: 5px dashed orange;
+        }
+
+        /* p tags preceded by div */
+        div ~ p {
+            border: 7px dotted tomato;
+        }
+
+        /* all elements with class */
+        .classname {
+            font-style: italic;
+        }
+
+        /* element with ID */
+        #idname {
+            text-transform: capitalize;
+        }
+
+        /* divs with certain classname */
+        div.classname {
+            text-decoration: dashed;
+        }
+
+        /* div with certain ID */
+        div#idname {
+            text-decoration: double;
+        }
+
+        /* all elements inside #idname */
+        #idname * {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p>Parrafo 1</p>
+    </div>
+    <div>
+        <p>Parrafo 2</p>
+    </div>
+    <p>Parrafo 3 </p>
+    <div>
+        div 1
+    </div>
+    <p>Parrafo 4</p>
+    <div class="classname">div 2 con clase = classname</div>
+    <div class="classname">div 3 con clase = classname</div>
+    <div id="idname">div 4 con id = idname</div>
+    <div id="idname">
+        <p>Parrafo 4</p>
+        <p>Parrafo 5</p>
+    </div>
+</body>
+</html>
