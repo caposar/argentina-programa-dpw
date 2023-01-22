@@ -1,0 +1,199 @@
+* {
+    /* border: 1px solid red; */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+@font-face {
+    font-family: Kollektif;
+  
+    src: url("/font/kollektif/Kollektif.ttf"),
+         url("/font/kollektif/Kollektif-Bold.ttf"),
+         url("/font/kollektif/Kollektif-BoldItalic.ttf"),
+         url("/font/kollektif/Kollektif-Italic.ttf")
+}
+@font-face {
+    font-family: PT_Serif;
+  
+    src: url("/font/PT_Serif/PTSerif-Regular.ttf"),
+         url("/font/PT_Serif/PTSerif-Bold.ttf"),
+         url("/font/PT_Serif/PTSerif-BoldItalic.ttf"),
+         url("/font/PT_Serif/PTSerif-Italic.ttf")
+}
+
+@font-face {
+    font-family: Questrial;
+  
+    src: url("/font/Questrial/Questrial-Regular.ttf")
+}
+
+
+html {
+    box-sizing: border-box;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Questrial', sans-serif;
+}
+
+*, *:after, *:before {
+    box-sizing: inherit;
+}
+
+.container {
+    max-width: 75rem;
+    margin: 2rem auto;
+}
+/* Agrega sombra a elemento */
+.box-shadow {
+    box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 30%);
+}
+
+header {
+    background-color: #536779;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 3rem 2rem 3rem;
+    flex-wrap: wrap;
+}
+
+header .circular--landscape {
+    display: inline-block;
+    position: relative;
+    width: 16.5rem;
+    height: 16.5rem;
+    overflow: hidden;
+    border-radius: 50%;
+    border: .625rem solid white;    
+}
+  
+header .circular--landscape img {
+    width: auto;
+    height: 100%;
+    margin-left: -1.25rem;
+}
+
+header .descripcion {
+    width: 27.5rem;
+    color: white;
+    text-align: center;
+}
+
+header .descripcion h1 {
+    font-size: 3rem;
+    margin-bottom: 1.25rem;
+    font-family: Kollektif, sans-serif;
+}
+
+h2 {
+    font-family: PT_Serif;
+    font-weight: 400;
+}
+
+header .descripcion h2 {
+    font-size: 1.375rem;
+    font-weight: 400;
+    letter-spacing: .25rem;
+    margin-bottom: 1.5rem;
+}
+header .descripcion p {
+    font-size: 1.0625rem;
+    font-weight: 200;
+    line-height: 1.5;
+}
+
+main {
+    display: flex;
+}
+
+/* contenido lateral */
+aside {
+    background-color: #EFEDED;
+    /* width: 25rem; */
+    flex: 2;
+    padding: 2rem 2.5rem;
+}
+
+.contenido-derecho {
+    /* flex: 1; */
+    flex: 3;
+    padding: 2rem 2.5rem;
+    background-color: #F6F6F6;
+}
+
+aside h2, .contenido-derecho h2 {
+    font-size: 1.125rem;
+    font-weight: 800;
+    letter-spacing: .125rem;
+    color: black;
+}
+
+aside .seccion-contacto .titulo-contacto {
+    padding-left: 0.75rem;
+}
+
+aside .seccion-contacto ul {
+    list-style-type: none;
+    padding-left: .75rem;
+}
+aside .seccion-contacto ul li {
+    padding: .5rem 0 0.5rem;
+    display: flex;
+    align-items: center;
+}
+aside .seccion-contacto ul li i {    
+    min-width: 4rem;
+}
+aside .tamaño-icono {
+    font-size: 2rem;
+}
+aside .seccion-contacto ul a {
+    color: unset;
+    text-decoration: none;
+}
+aside .seccion-contacto ul li span#location:hover {
+    cursor: pointer;
+}
+
+aside section.seccion ul {
+    padding-left: 1.5rem;
+}
+aside section.seccion ul li {
+    line-height: 1.5;
+}
+
+.contenido-derecho section.seccion h3 {
+    font-family: Kollektif;
+    font-weight: 400;
+    margin-bottom: .75rem;
+}
+.contenido-derecho section.seccion h4 {
+    font-weight: 400;
+    margin-top: .75rem;
+}
+.contenido-derecho section.seccion ul {    
+    padding-left: 1.5rem;
+}
+.contenido-derecho section.seccion ul li {    
+    line-height: 1.5;
+}
+
+/**
+* Mobile y pequeñas tablets
+*/
+@media (max-width: 768px) {
+
+    html {
+      font-size: 12px;
+    }
+    
+    header {
+        text-align: center;
+        display: inherit;
+    }
+    header .descripcion {
+        width: inherit;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+}

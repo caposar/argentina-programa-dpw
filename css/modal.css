@@ -1,0 +1,139 @@
+dialog::backdrop {
+    background: rgba(51, 51, 51, 0.6);
+}
+
+dialog.modal {
+    border: 1px solid #dee2e6;
+}
+
+/* Size Small */
+.modal-dialog.modal-sm {
+    max-width: 18.75rem;
+}
+/* Size Default */
+.modal-dialog {
+    max-width: 37.5rem; /*Importante*/
+    display: flex;
+}
+/* Size Large */
+.modal-dialog.modal-lg {
+    max-width: 50rem;
+}
+/* Size Extra large */
+.modal-dialog.modal-xl {
+    max-width: 71.25rem;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-dialog .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dee2e6;
+}
+.modal-dialog .modal-header button {
+    height: fit-content;    
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+.modal-dialog .modal-header button:focus-visible {
+    outline: 0;
+}
+.modal-dialog .modal-header button i {
+    font-size: 2rem;
+}
+.modal-dialog .modal-header button i:hover {
+    opacity: .75;    
+}
+
+
+.modal[open] {
+    /* transition: box-shadow 0.25s ease-in-out; */
+    /* box-shadow: 0px 0px 0 #fff; */
+    animation: backdrop-slide 5.25s ease forwards;
+}
+.modal.close {
+    /* box-shadow: 8px 8px 0 #fff; */
+    animation: backdrop-slide 5.25s ease forwards;
+    /* animation-direction: reverse; */
+}
+@keyframes backdrop-slide {
+    from {
+        display: none;        
+    }
+    to {      
+        display: block;
+    }
+}
+  
+.modal[open]::backdrop {
+    animation: backdrop-fade .5s  ease forwards;
+}
+.modal.close::backdrop {
+    animation: backdrop-fade 1.5s ease backwards;
+    animation-direction: reverse;
+}
+@keyframes backdrop-fade {
+    from {
+      background: transparent;
+    }
+    to {
+      /* background: rgba(0,0,0); */
+      background: rgba(51, 51, 51, 0.5);
+    }
+}
+
+.modal-dialog .modal-body {
+    position: relative;
+    flex: 1 1 auto;
+}
+
+.modal-dialog .modal-body .google-maps {    
+    position: relative;
+    padding-bottom: 75%; /* para un aspect ratio 4:3 */
+    padding-bottom: 56.25%; /* para un aspect ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+.modal-dialog .modal-body .google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/**
+* Mobile y pequeñas tablets
+*/
+@media (max-width: 768px) and (orientation: portrait) {
+    
+    html {
+        font-size: 12px;
+    }
+    
+    .modal-dialog .modal-body .google-maps {        
+        padding-bottom: 75%; /* para un aspect ratio 4:3 */        
+    }
+
+}
+
+/* Cambio de tamaño de fuentes para hacerlo responsivo en celulares */
+@media (max-width: 393px) and (orientation: portrait) {
+    html {
+        font-size: 12px;
+    }
+    
+    .modal-dialog .modal-body .google-maps {        
+        padding-bottom: 75%; /* para un aspect ratio 4:3 */        
+    }
+}
+
+@media (max-width: 823px) and (orientation: landscape) {
+    
+}
